@@ -1,77 +1,114 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>#Backlog — Менеджер задач</title>
+  <title>#Backlog — Task Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
+    :root {
+      --accent: #4B57F3;
+      --text-main: #2A2B33;
+      --gray-bg: #F1F2F7;
+      --white: #FFFFFF;
+      --gray-border: #A8A8B0;
     }
+
     body {
-      font-family: sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--gray-bg);
+      color: var(--text-main);
     }
+
     header {
-      background-color: #1e1e2f;
-      color: white;
-      padding: 2rem 1rem;
       text-align: center;
+      padding: 3rem 1rem 2rem;
+      background-color: var(--white);
     }
-    h1 {
-      font-size: 2.5rem;
+
+    header h1 {
+      font-size: 2.2rem;
       margin-bottom: 0.5rem;
     }
-    p.lead {
+
+    header p {
       font-size: 1.2rem;
+      margin: 0 auto;
+      max-width: 500px;
     }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 1rem;
+
+    .cta {
+      margin: 2rem auto 1rem;
     }
-    .play-button {
-      display: inline-block;
-      margin: 1rem 0;
-      background-color: #4285F4;
+
+    .cta a {
+      background-color: var(--accent);
       color: white;
-      padding: 0.8rem 1.2rem;
-      border-radius: 6px;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
+      font-size: 1rem;
     }
-    .screenshots img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-    .feature {
-      background: white;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #888;
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
       padding: 2rem 1rem;
     }
-    footer a {
-      color: #888;
+
+    .mockup {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
     }
-    @media (min-width: 600px) {
-      .screenshots {
-        display: flex;
-        gap: 1rem;
-      }
-      .screenshots img {
-        width: 100%;
-        flex: 1;
+
+    .mockup img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .features {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .feature {
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .feature h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (min-width: 700px) {
+      .features {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
@@ -80,56 +117,48 @@
 
   <header>
     <h1>#Backlog</h1>
-    <p class="lead">Умный способ управлять задачами и приоритетами</p>
+    <p>Manage your tasks efficiently with an intuitive and clean task manager built for control and clarity.</p>
+    <div class="cta">
+      <a href="#">Get it on Google Play</a>
+    </div>
   </header>
 
   <div class="container">
-    <section id="download" style="text-align: center;">
-      <a href="#" class="play-button">Скачать в Google Play</a>
-      <p><small>Скоро в Google Play</small></p>
-    </section>
+    <div class="mockup">
+      <img src="mockup-backlog.png" alt="Backlog app preview" />
+    </div>
 
-    <section id="screenshots">
-      <h2>Скриншоты</h2>
-      <div class="screenshots">
-        <img src="screenshot1.jpg" alt="Скриншот #1" />
-        <img src="screenshot2.jpg" alt="Скриншот #2" />
+    <section>
+      <h2>Features</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>🗂️ Group by Tags</h3>
+          <p>Organize your tasks with customizable tags and visual separation.</p>
+        </div>
+        <div class="feature">
+          <h3>✅ Completion & Control</h3>
+          <p>Mark tasks as completed or requiring verification before closing.</p>
+        </div>
+        <div class="feature">
+          <h3>📅 Schedule with Ease</h3>
+          <p>Plan tasks for specific dates or move them to tomorrow with one tap.</p>
+        </div>
+        <div class="feature">
+          <h3>🔒 Premium Features</h3>
+          <p>Unlock extended functionality with the premium version.</p>
+        </div>
       </div>
     </section>
 
-    <section id="features">
-      <h2>Возможности</h2>
-
-      <div class="feature">
-        <h3>🗂️ Группировка по тегам</h3>
-        <p>Организуйте задачи с помощью настраиваемых тегов.</p>
-      </div>
-
-      <div class="feature">
-        <h3>✅ Завершение и контроль</h3>
-        <p>Отмечайте задачи как завершённые или требующие контроля.</p>
-      </div>
-
-      <div class="feature">
-        <h3>📅 Планирование</h3>
-        <p>Задавайте точные даты или переносите задачи на завтра одним нажатием.</p>
-      </div>
-
-      <div class="feature">
-        <h3>🔒 Премиум функции</h3>
-        <p>Разблокируйте дополнительные функции в платной версии.</p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Поддержка</h2>
-      <p>Если у вас есть вопросы или предложения, напишите нам: <a href="mailto:support@backlogapp.example">support@backlogapp.example</a></p>
+    <section style="margin-top: 3rem;">
+      <h2>Support</h2>
+      <p>If you have any questions or suggestions, contact us: <a href="mailto:support@backlogapp.example">support@backlogapp.example</a></p>
     </section>
   </div>
 
   <footer>
+    <p><a href="privacy.html">Privacy Policy</a></p>
     <p>© 2025 #Backlog App</p>
-    <p><a href="privacy.html">Политика конфиденциальности</a></p>
   </footer>
 
 </body>
