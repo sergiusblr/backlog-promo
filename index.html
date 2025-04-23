@@ -43,6 +43,9 @@
     }
 
     .cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       background-color: var(--accent);
       color: white;
       padding: 0.8rem 1.5rem;
@@ -52,21 +55,27 @@
       font-size: 1rem;
     }
 
+    .cta img {
+      height: 20px;
+    }
+
     .container {
       max-width: 1000px;
       margin: 0 auto;
       padding: 2rem 1rem;
     }
 
-    .mockup {
+    .promo-block {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
       margin: 2rem 0;
     }
 
-    .mockup img {
+    .promo-block img {
+      max-width: 300px;
       width: 100%;
-      max-width: 600px;
       border-radius: 16px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.1);
     }
@@ -74,6 +83,7 @@
     section h2 {
       font-size: 1.5rem;
       margin-bottom: 1rem;
+      text-align: center;
     }
 
     .features {
@@ -107,6 +117,11 @@
     }
 
     @media (min-width: 700px) {
+      .promo-block {
+        flex-direction: row;
+        justify-content: center;
+      }
+
       .features {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -117,15 +132,19 @@
 
   <header>
     <h1>#Backlog</h1>
-    <p>Manage your tasks efficiently with an intuitive and clean task manager built for control and clarity.</p>
+    <p>Manage your tasks efficiently with a clean and powerful task manager.</p>
     <div class="cta">
-      <a href="#">Get it on Google Play</a>
+      <a href="#">
+        <img src="icon_play_store_512x512.png" alt="Play Store icon" />
+        Get it on Google Play
+      </a>
     </div>
   </header>
 
   <div class="container">
-    <div class="mockup">
-      <img src="mockup-backlog.png" alt="Backlog app preview" />
+    <div class="promo-block">
+      <img src="0-1-2_calendar.png" alt="Illustration: calendar planning" />
+      <img src="IMG_8331-portrait.png" alt="App screenshot in phone" />
     </div>
 
     <section>
@@ -133,26 +152,26 @@
       <div class="features">
         <div class="feature">
           <h3>🗂️ Group by Tags</h3>
-          <p>Organize your tasks with customizable tags and visual separation.</p>
+          <p>Organize your tasks with customizable tags and visual clarity.</p>
         </div>
         <div class="feature">
           <h3>✅ Completion & Control</h3>
-          <p>Mark tasks as completed or requiring verification before closing.</p>
+          <p>Mark tasks as completed or requiring control before verification.</p>
         </div>
         <div class="feature">
           <h3>📅 Schedule with Ease</h3>
-          <p>Plan tasks for specific dates or move them to tomorrow with one tap.</p>
+          <p>Set exact dates or quickly move tasks to tomorrow.</p>
         </div>
         <div class="feature">
           <h3>🔒 Premium Features</h3>
-          <p>Unlock extended functionality with the premium version.</p>
+          <p>Unlock extended functionality and advanced filters.</p>
         </div>
       </div>
     </section>
 
     <section style="margin-top: 3rem;">
       <h2>Support</h2>
-      <p>If you have any questions or suggestions, contact us: <a href="mailto:support@backlogapp.example">support@backlogapp.example</a></p>
+      <p>If you have any questions, email us at <a href="mailto:support@backlogapp.example">support@backlogapp.example</a></p>
     </section>
   </div>
 
