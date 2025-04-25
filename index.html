@@ -4,105 +4,130 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>#Backlog — Task Manager</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --accent: #4B57F3;
-      --text-main: #2A2B33;
-      --gray-bg: #F1F2F7;
-      --white: #FFFFFF;
-      --gray-border: #A8A8B0;
+      --accent: #0071e3;
+      --text-main: #1d1d1f;
+      --gray-bg: #f9f9f9;
+      --white: #ffffff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-main: #f5f5f7;
+        --gray-bg: #000000;
+        --white: #1d1d1f;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Roboto', sans-serif;
+      font-weight: 300;
       background-color: var(--gray-bg);
       color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
     }
 
     header {
+      padding: 5rem 1rem 2rem;
       text-align: center;
-      padding: 2rem 1rem 1rem;
-      background-color: var(--white);
+      background-color: var(--gray-bg);
     }
 
     .logo {
-      width: 100px;
-      height: 100px;
-      margin: 0 auto 1rem;
+      width: 72px;
+      height: 72px;
+      margin-bottom: 1.5rem;
     }
 
     header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
+      font-size: 3rem;
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      margin: 0.2rem 0 1rem;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
+      max-width: 640px;
       margin: 0 auto;
-      max-width: 500px;
+      color: #6e6e73;
     }
 
     .cta {
-      margin: 2rem auto 1rem;
+      margin-top: 2rem;
     }
 
     .cta a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background-color: var(--accent);
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 500;
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
       font-size: 1rem;
+      color: var(--white);
+      background-color: var(--accent);
+      border-radius: 24px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
     }
 
-    .cta img {
-      height: 20px;
+    .cta a:hover {
+      background-color: #005bb5;
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 2rem 1rem;
+      padding: 4rem 1rem;
     }
 
     .mockup {
       display: flex;
       justify-content: center;
-      margin: 2rem 0;
+      margin: 4rem 0;
     }
 
     .mockup video {
-      width: 50%;
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 420px;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
     }
 
     .review {
-      background: var(--white);
-      border: 1px solid var(--gray-border);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-top: 3rem;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+      background: none;
+      border-radius: 20px;
+      padding: 2.5rem;
+      font-size: 1.25rem;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 720px;
     }
 
-    .review p {
-      margin: 0;
+    .review strong {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    section {
+      text-align: center;
+      margin-top: 5rem;
+      font-size: 1rem;
     }
 
     footer {
       text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #777;
+      padding: 4rem 1rem 2rem;
+      font-size: 0.85rem;
+      color: #999;
     }
 
     footer a {
@@ -118,10 +143,7 @@
     <h1>#Backlog</h1>
     <p>Manage your tasks efficiently with a clean and powerful task manager.</p>
     <div class="cta">
-      <a href="#">
-        <img src="icon_play_store_512x512.png" alt="Play Store icon" />
-        Get it on Google Play
-      </a>
+      <a href="#">Get it on Google Play</a>
     </div>
   </header>
 
@@ -131,16 +153,15 @@
     </div>
 
     <div class="review">
-      <p>
-        <strong>Chaos loses to those who begin their morning with clarity.</strong><br><br>
-        Start your Review procedure every day: set your priorities, update statuses, close what’s done — and take full control of your day. This powerful ritual clears your mind, keeps you focused, and makes sure nothing important slips away.<br><br>
-        Step into the day with confidence and purpose.
-      </p>
+      <strong>Chaos loses to those who begin their morning with clarity.</strong>
+      Start your Review procedure every day: set your priorities, update statuses, close what’s done — and take full control of your day. This powerful ritual clears your mind, keeps you focused, and makes sure nothing important slips away.
+      <br><br>
+      Step into the day with confidence and purpose.
     </div>
 
-    <section style="margin-top: 3rem;">
-      <h2 style="text-align: center;">Support</h2>
-      <p style="text-align: center;">If you have any questions, email us at <a href="mailto:support@backlogapp.example">support@backlogapp.example</a></p>
+    <section>
+      <h2>Support</h2>
+      <p>If you have any questions, email us at <a href="mailto:support@backlogapp.example">support@backlogapp.example</a></p>
     </section>
   </div>
 
