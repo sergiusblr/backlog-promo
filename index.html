@@ -77,35 +77,25 @@
       margin: 2rem 0;
     }
 
-    .mockup img {
-      max-width: 300px;
-      width: 100%;
+    .mockup video {
+      width: 50%;
       border-radius: 16px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.1);
     }
 
-    section h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .features {
-      display: grid;
-      gap: 1.5rem;
-    }
-
-    .feature {
+    .review {
       background: var(--white);
       border: 1px solid var(--gray-border);
       border-radius: 12px;
-      padding: 1rem 1.2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      padding: 2rem;
+      margin-top: 3rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
     }
 
-    .feature h3 {
-      margin-top: 0;
-      font-size: 1.2rem;
+    .review p {
+      margin: 0;
     }
 
     footer {
@@ -118,12 +108,6 @@
     footer a {
       color: var(--accent);
       text-decoration: none;
-    }
-
-    @media (min-width: 700px) {
-      .features {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
   </style>
 </head>
@@ -143,34 +127,20 @@
 
   <div class="container">
     <div class="mockup">
-  <video src="main.MP4" autoplay muted loop playsinline style="width: 20%; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);"></video>
+      <video src="main.MP4" autoplay muted loop playsinline></video>
     </div>
 
-    <section>
-      <h2>Features</h2>
-      <div class="features">
-        <div class="feature">
-          <h3>🗂️ Group by Tags</h3>
-          <p>Organize your tasks with customizable tags and visual clarity.</p>
-        </div>
-        <div class="feature">
-          <h3>✅ Completion & Control</h3>
-          <p>Mark tasks as completed or requiring control before verification.</p>
-        </div>
-        <div class="feature">
-          <h3>📅 Schedule with Ease</h3>
-          <p>Set exact dates or quickly move tasks to tomorrow.</p>
-        </div>
-        <div class="feature">
-          <h3>🔒 Premium Features</h3>
-          <p>Unlock extended functionality and advanced filters.</p>
-        </div>
-      </div>
-    </section>
+    <div class="review">
+      <p>
+        <strong>Chaos loses to those who begin their morning with clarity.</strong><br><br>
+        Start your Review procedure every day: set your priorities, update statuses, close what’s done — and take full control of your day. This powerful ritual clears your mind, keeps you focused, and makes sure nothing important slips away.<br><br>
+        Step into the day with confidence and purpose.
+      </p>
+    </div>
 
     <section style="margin-top: 3rem;">
-      <h2>Support</h2>
-      <p>If you have any questions, email us at <a href="mailto:support@backlogapp.example">support@backlogapp.example</a></p>
+      <h2 style="text-align: center;">Support</h2>
+      <p style="text-align: center;">If you have any questions, email us at <a href="mailto:support@backlogapp.example">support@backlogapp.example</a></p>
     </section>
   </div>
 
