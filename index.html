@@ -1,171 +1,230 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>#Backlog — Task Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
+<link rel="manifest" href="manifest.json">
+
+
   <style>
+    :root {
+      --accent: #0071e3;
+      --text-main: #1d1d1f;
+      --gray-bg: #f9f9f9;
+      --white: #ffffff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-main: #f5f5f7;
+        --gray-bg: #000000;
+        --white: #1d1d1f;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f9f9f9;
-      color: #1d1d1f;
       margin: 0;
       padding: 0;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      background-color: var(--gray-bg);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
     }
+
     header {
+      padding: 5rem 1rem 2rem;
       text-align: center;
-      padding: 2rem 1rem;
+      background-color: var(--gray-bg);
     }
-    .language-switch {
+
+    .logo {
+      width: 72px;
+      height: 72px;
+      margin-bottom: 1.5rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      margin: 0.2rem 0 1rem;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      max-width: 640px;
+      margin: 0 auto;
+      color: #6e6e73;
+    }
+
+    .cta {
+      margin-top: 2rem;
+    }
+
+    .cta a {
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
+      font-size: 1rem;
+      color: var(--white);
+      background-color: var(--accent);
+      border-radius: 24px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta a:hover {
+      background-color: #005bb5;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+    }
+
+    .mockup {
+      display: flex;
+      justify-content: center;
+      margin: 4rem 0;
+    }
+
+    .mockup video {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .mockup video:hover {
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 600px) {
+      .mockup video {
+        width: 90%;
+      }
+    }
+
+    .review {
+      background: none;
+      border-radius: 20px;
+      padding: 2.5rem;
+      font-size: 1.25rem;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 720px;
+    }
+
+    .review strong {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 400;
       margin-bottom: 1rem;
     }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-    }
-    video {
-      width: 100%;
-      max-width: 400px;
-      display: block;
-      margin: 2rem auto;
-      border-radius: 16px;
-    }
+
     section {
-      margin-top: 3rem;
+      text-align: center;
+      margin-top: 5rem;
+      font-size: 1rem;
     }
+
+    section h2 {
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    section h3 {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    section p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: #555;
+    }
+
     footer {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 4rem 1rem 2rem;
       font-size: 0.85rem;
-      color: #777;
+      color: #999;
     }
+
     footer a {
-      color: #0071e3;
+      color: var(--accent);
       text-decoration: none;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <img src="favicon.ico" alt="#Backlog Logo" style="width:72px;height:72px;">
-  <div class="language-switch">
-    <button onclick="setLanguage('en')">🇬🇧 English</button> | 
-    <button onclick="setLanguage('ru')">🇷🇺 Русский</button>
+  <header>
+    <img class="logo" src="icon_play_store_512x512.png" alt="#Backlog Logo" />
+    <h1>#Backlog</h1>
+    <p>Not just a tool — a daily ritual for a calmer mind<br><br>
+    #Backlog helps you build a simple habit: review your tasks every day, stay connected to what’s important, and never lose track of what matters most. It’s not about chasing productivity — it’s about finding calm, clarity, and quiet confidence in your work</p>
+    <div class="cta">
+      <a href="#">Get it on Google Play</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="mockup">
+      <video src="main.MP4" autoplay muted loop playsinline></video>
+    </div>
+
+    <div class="review">
+      <strong>Chaos loses to those who begin their morning with clarity.</strong>
+      Start your Review procedure every day: set your priorities, update statuses, close what’s done — and take full control of your day. This powerful ritual clears your mind, keeps you focused, and makes sure nothing important slips away
+      <br><br>
+      Step into the day with confidence and purpose
+    </div>
+
+    <section>
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>Why create another task tracker when there are already so many?</h3>
+      <p>We’ve tried countless popular trackers ourselves, but none felt quite right. So we decided to build something different — a tool we’d genuinely enjoy using every single day</p>
+
+      <h3>What’s special about your app?</h3>
+      <p>It’s all about simplicity and purpose. We cleared away the clutter and kept only what truly helps you manage tasks effectively. At the same time, we added thoughtful touches you won’t find in many other apps — like intermediate statuses and a daily review habit that keeps you connected to your work</p>
+
+      <h3>What is the review process?</h3>
+      <p>It’s a small but life-changing habit: taking a moment each day — morning or evening — to look through all your tasks. This simple practice brings clarity. You’ll find ways to refine, split, or even remove tasks you no longer need. More importantly, daily reviews help you stay on top of everything, giving you a sense of calm even during your busiest times. It’s a little act of self-care for your mind</p>
+
+      <h3>What are intermediate statuses?</h3>
+      <p>Sometimes ticking off a task as "done" doesn’t tell the whole story. Maybe you’ve handed a task to a teammate and need to follow up later. In #Backlog, you can easily move tasks into an "Under Control" status — so tomorrow, when you do your review, you’ll instantly know which ones need a check-in. No more forgotten conversations or loose ends</p>
+
+      <h3>Why is the app paid, and why by subscription?</h3>
+      <p>The honest truth: we're not here to make a fortune. We simply want to keep the app clean — no ads, no hidden catches. Even in the free version, you can manage a huge number of tasks. If you ever find yourself reaching the free limit, it means our app is truly helping you get things done — and that’s a beautiful thing. A small subscription helps keep #Backlog alive and growing, and it shows us that what we built is really making a difference. And that support means more to us than you can imagine</p>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <p>If you have any questions, email us at <a href="mailto:bcklgapp@gmail.com">bcklgapp@gmail.com</a></p>
+    </section>
   </div>
-  <h1 id="headline"></h1>
-  <p id="tagline"></p>
-  <div class="cta">
-    <a href="#">Get it on Google Play</a>
-  </div>
-</header>
 
-<div class="container">
-  <video src="main.MP4" autoplay muted loop playsinline></video>
-
-  <div id="review" class="review"></div>
-
-  <section>
-    <h2 id="faqTitle"></h2>
-
-    <h3 id="faq1q"></h3>
-    <p id="faq1a"></p>
-
-    <h3 id="faq2q"></h3>
-    <p id="faq2a"></p>
-
-    <h3 id="faq3q"></h3>
-    <p id="faq3a"></p>
-
-    <h3 id="faq4q"></h3>
-    <p id="faq4a"></p>
-
-    <h3 id="faq5q"></h3>
-    <p id="faq5a"></p>
-  </section>
-
-  <section>
-    <h2 id="supportTitle"></h2>
-    <p><a href="mailto:bcklgapp@gmail.com">bcklgapp@gmail.com</a></p>
-  </section>
-</div>
-
-<footer>
-  <p><a href="privacy.html" id="privacyPolicyLink">Privacy Policy</a> • <a href="terms.html" id="termsServiceLink">Terms of Service</a></p>
-  <p>© 2025 #Backlog App</p>
-</footer>
-
-<script>
-const translations = {
-  en: {
-    headline: "#Backlog",
-    tagline: "Not just a tool — a daily ritual for a calmer mind.\n\n#Backlog helps you build a simple habit: review your tasks every day, stay connected to what’s important, and never lose track of what matters most. It’s not about chasing productivity — it’s about finding calm, clarity, and quiet confidence in your work.",
-    review: "<strong>Chaos loses to those who begin their morning with clarity.</strong><br>Start your Review procedure every day: set your priorities, update statuses, close what’s done — and take full control of your day.",
-    faqTitle: "Frequently Asked Questions",
-    faq1q: "Why create another task tracker when there are already so many?",
-    faq1a: "We’ve tried countless popular trackers ourselves, but none felt quite right...",
-    faq2q: "What’s special about your app?",
-    faq2a: "It’s all about simplicity and purpose...",
-    faq3q: "What is the review process?",
-    faq3a: "It’s a small but life-changing habit...",
-    faq4q: "What are intermediate statuses?",
-    faq4a: "Sometimes ticking off a task as "done" doesn’t tell the whole story...",
-    faq5q: "Why is the app paid, and why by subscription?",
-    faq5a: "The honest truth: we're not here to make a fortune...",
-    supportTitle: "Support",
-    privacyPolicyLink: "Privacy Policy",
-    termsServiceLink: "Terms of Service"
-  },
-  ru: {
-    headline: "#Backlog",
-    tagline: "Не просто инструмент — ежедневный ритуал для спокойствия ума.\n\n#Backlog помогает выработать простую привычку: ежедневно проверять задачи, быть на связи с важным и не терять фокус.",
-    review: "<strong>Хаос проигрывает тем, кто начинает утро с ясности.</strong><br>Каждый день начинайте с процедуры обзора: определяйте приоритеты, обновляйте статусы, закрывайте выполненные задачи — и полностью контролируйте свой день.",
-    faqTitle: "Часто задаваемые вопросы",
-    faq1q: "Зачем создавать ещё один трекер задач?",
-    faq1a: "Мы перепробовали множество популярных трекеров, но ни один не подошёл идеально...",
-    faq2q: "Что особенного в вашем приложении?",
-    faq2a: "Главное — простота и осознанность...",
-    faq3q: "Что такое процедура обзора?",
-    faq3a: "Это маленькая, но меняющая жизнь привычка...",
-    faq4q: "Что такое промежуточные статусы?",
-    faq4a: "Иногда отметка "выполнено" не отражает всей картины...",
-    faq5q: "Почему приложение платное и через подписку?",
-    faq5a: "Честно: мы не стремимся заработать миллионы...",
-    supportTitle: "Поддержка",
-    privacyPolicyLink: "Политика конфиденциальности",
-    termsServiceLink: "Условия использования"
-  }
-};
-
-function setLanguage(lang) {
-  document.getElementById('headline').textContent = translations[lang].headline;
-  document.getElementById('tagline').innerHTML = translations[lang].tagline.replace(/\n/g, '<br>');
-  document.getElementById('review').innerHTML = translations[lang].review;
-  document.getElementById('faqTitle').textContent = translations[lang].faqTitle;
-  document.getElementById('faq1q').textContent = translations[lang].faq1q;
-  document.getElementById('faq1a').textContent = translations[lang].faq1a;
-  document.getElementById('faq2q').textContent = translations[lang].faq2q;
-  document.getElementById('faq2a').textContent = translations[lang].faq2a;
-  document.getElementById('faq3q').textContent = translations[lang].faq3q;
-  document.getElementById('faq3a').textContent = translations[lang].faq3a;
-  document.getElementById('faq4q').textContent = translations[lang].faq4q;
-  document.getElementById('faq4a').textContent = translations[lang].faq4a;
-  document.getElementById('faq5q').textContent = translations[lang].faq5q;
-  document.getElementById('faq5a').textContent = translations[lang].faq5a;
-  document.getElementById('supportTitle').textContent = translations[lang].supportTitle;
-  document.getElementById('privacyPolicyLink').textContent = translations[lang].privacyPolicyLink;
-  document.getElementById('termsServiceLink').textContent = translations[lang].termsServiceLink;
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-  const userLang = navigator.language.startsWith('ru') ? 'ru' : 'en';
-  setLanguage(userLang);
-});
-</script>
+  <footer>
+    <p><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Service</a></p>
+    <p>© 2025 #Backlog App</p>
+  </footer>
 
 </body>
 </html>
